@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { connect} from 'react-redux'
 import styles from '../styles/Home.module.css'
+import {wrapper} from "@yuyuid/src/redux/store";
+import {ChangeModeTheme} from "@yuyuid/src/redux/actions/theme";
 
-const Home: NextPage = () => {
+const Home: NextPage = (((props:any) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <pre>{JSON.stringify(props,null,2)}</pre>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
@@ -67,6 +71,16 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
-}
+}))
 
-export default Home
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  // @ts-ignore
+  (store)=> async (ctx)=> {
+    await store.dispatch(ChangeModeTheme({mode:"dark"}))
+    return {
+      props: store.getState()
+    }
+  })
+
+export default wrapper.withRedux(Home)
