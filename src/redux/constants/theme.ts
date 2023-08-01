@@ -1,1 +1,1 @@
-export const CHANGE_MODE_THEME = "CHANGE_MODE_THEME"
+export const CHANGE_MODE_THEME = ["@YID",'INIT','MODE'].join('/')

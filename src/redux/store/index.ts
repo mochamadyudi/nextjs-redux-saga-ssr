@@ -4,26 +4,20 @@ import {createWrapper} from "next-redux-wrapper";
 import rootReducers from '../reducers'
 import createSagaMiddleware from "redux-saga";
 import rootSaga from '../sagas/index'
+import {configureStoreProps} from "@yuyuid/interface";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware]
 
-interface configureStoreProps {
-  debug: boolean | false
-}
+
 
 function configureStore(preloadedState?: configureStoreProps) {
-
   const composeEnhancers = composeWithDevTools;
-
-
-  console.log({preloadedState})
   // @ts-ignore
   const store = createStore(
     rootReducers,
     //@ts-ignore
-    // preloadedState,
     composeEnhancers(applyMiddleware(...middlewares))
   );
 
@@ -42,14 +36,26 @@ function configureStore(preloadedState?: configureStoreProps) {
 
 }
 
+/**
+ * @author mochamadyudi
+ * @description - Call store in provider
+ */
 const store = configureStore();
 
+/**
+ * @author mochamadyudi
+ * @description - Wrapper used if you setup page in serverSideProps at nextJS and setup initialProps in _app.tsx
+ */
 const wrapper
   = createWrapper(
   //@ts-ignore
   configureStore,
-  {debug: true }
+  {debug: false }
 )
+/**
+ * @author mochamadyudi
+ * @description - export store and wrapper
+ */
 export {
   store,
   wrapper

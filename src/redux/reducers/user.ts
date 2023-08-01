@@ -16,6 +16,11 @@ let initialState = <themeStateProps>{
 export default function(state = initialState,action:actionProps){
   let { type, payload} = action
   switch (type){
+    case "TEST":
+      return {
+        ...state,
+        isAuthenticated:payload
+      }
     default:
       return state
   }

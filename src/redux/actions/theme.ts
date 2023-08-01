@@ -1,10 +1,18 @@
+import {modeThemeProps} from "@yuyuid/interface";
+
 ;
 import {CHANGE_MODE_THEME} from "@yuyuid/src/redux/constants/theme";
 
-interface modeThemeProps {
-  mode: string | 'light' | 'dark' | null
+
+/**
+ * @param {modeThemeProps} payload
+ * @constructor
+ * @return {object}
+ * Example : { type :"event_action", payload:{mode:"light"}}
+ */
+export const ChangeModeTheme = (payload:modeThemeProps)=> {
+  return {
+    type:CHANGE_MODE_THEME,
+    payload
+  }
 }
-export const ChangeModeTheme = (payload:modeThemeProps)=> ({
-  type:CHANGE_MODE_THEME,
-  payload
-})

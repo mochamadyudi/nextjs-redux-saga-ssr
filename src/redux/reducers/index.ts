@@ -13,7 +13,15 @@ interface ActionProps {
   payload: any
 }
 const reducer = function(state:any,action:ActionProps){
-  return rootReducers(state,action)
+
+  if(action.type === 'PRELOAD_STATE'){
+    state = {
+      ...state,
+      ...action?.payload
+    }
+  }
+    //@ts-ignore
+    return rootReducers(state,action)
 }
-export default rootReducers
+export default reducer
 // export default reducer

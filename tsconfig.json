@@ -16,6 +16,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@yuyuid/utils": ["./src/utils"],
+      "@yuyuid/hooks": ["./src/hooks"],
       "@yuyuid/types": ["./src/typedef/type"],
       "@yuyuid/interface": ["./src/typedef/interface"],
       "@yuyuid/provider": ["./src/providers"],

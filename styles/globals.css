@@ -10,17 +10,66 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
+.yid-main.dashboard {
+  height: calc(100vh - 62px);
+  width: 100%;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.yid-main.dashboard .yid-layout {
+  display: flex;
+  align-items: start;
+  top: 62px;
+  position: relative;
+  height: calc(100vh - 62px);
+}
+.yid-navbar {
+  height: 60px;
+  top: 0;
+  z-index: 1001;
+  position: fixed;
+  width: 100%;
+  padding: 0 10px;
+  background: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 5px #45454536;
+}
+.yid-content {
+  width: calc(100% - 280px);
+  margin-left: 280px;
+  height: calc(100vh - 62px);
+  background: #dee0f073;
+}
+.yid-sidebar {
+  z-index: 1004;
+  box-shadow: 0 0 10px #4a4a4a12;
+  border-right: 1px solid #4a4a4a12;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  max-width: 280px;
+  height: calc(100vh - 62px);
+  display: block;
+}
+.yid-sidebar-content {
+  overflow-y: auto;
+  margin: 0 !important;
+  height: 100%;
+  padding: 0;
+  list-style: none !important;
+}
+.yid-sidebar-item {
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.yid-sidebar-item .item-content {
+  padding: 10px;
+}
+.yid-sidebar-item:hover {
+  transition: 0.2s;
+  background: rgba(22, 172, 197, 0.1);
+}
+.yid-sidebar-item a {
+  text-decoration: none;
+  list-style: none !important;
 }
