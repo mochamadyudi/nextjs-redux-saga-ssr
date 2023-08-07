@@ -1,0 +1,17 @@
+// @author Mochamad Yudi Sobari
+// @github https://github.com/mochamadyudi
+// @email yuyuid.id12@gmail.com
+// @contact +6285718851007
+
+
+.app{
+  &-page{
+    &-header{
+      width: calc(100% + 50px) !important;
+      margin: 0 -25px !important;
+      @include themify($themes){
+        background: themed('card') !important;
+      }
+    }
+  }
+}

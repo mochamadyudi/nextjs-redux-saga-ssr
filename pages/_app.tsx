@@ -1,15 +1,13 @@
 import React from 'react';
-import '../styles/globals.css'
-import type {AppProps} from 'next/app'
+import "@yuyuid/src/assets/scss/main.scss"
 import {AppProvider} from "@yuyuid/provider";
 import {NextPageContext} from "next";
 import {Stores} from "@yuyuid/redux";
 import {Provider} from "react-redux";
-import {UpdateStateHook} from "@yuyuid/src/hooks/update-state.hook";
 
-// export const config = {
-//   // amp: "hybrid"
-// }
+export const config = {
+  amp: "hybrid"
+}
 let {
   store,
   wrapper

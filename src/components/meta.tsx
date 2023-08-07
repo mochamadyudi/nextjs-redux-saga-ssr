@@ -1,10 +1,6 @@
 import React, {ReactComponentElement} from 'react'
 import {getEnv} from "@yuyuid/utils";
 import Head from "next/head";
-
-
-let title =  getEnv("NEXT_APP_TITLE")
-
 interface MetaData {
   //@ts-ignore
   title?: string | title,
@@ -14,8 +10,9 @@ interface MetaData {
 interface MetaProps extends  MetaData{
   children?: React.ReactNode | Function | undefined,
 }
-export default function Meta(props: MetaProps) {
-  let { children,title,description,keyword } = props
+
+const Meta: React.FC<MetaProps> = function(props){
+  let { children , title, description, keyword} = props
   return (
     <Head>
       <title>{title ?? getEnv('TITLE','public')}</title>
@@ -29,3 +26,4 @@ export default function Meta(props: MetaProps) {
     </Head>
   )
 }
+export default Meta

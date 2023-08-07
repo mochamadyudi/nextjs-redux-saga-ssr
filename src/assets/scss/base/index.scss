@@ -1,9 +1,17 @@
+// @author Mochamad Yudi Sobari
+// @github https://github.com/mochamadyudi
+// @email yuyuid.id12@gmail.com
+// @contact +6285718851007
+
+@import "scaffolding";
+@import "typography";
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -34,9 +42,9 @@ a {
   box-shadow: 0 0 5px #45454536;
 }
 .yid-content {
-  width: calc(100% - 280px);
-  margin-left: 280px;
-  height: calc(100vh - 62px);
+  width: calc(100% - $sidebar-width);
+  margin-left: $sidebar-width;
+  min-height: calc(100vh - 62px);
   background: #dee0f073;
 }
 .yid-sidebar {
@@ -46,7 +54,7 @@ a {
   position: fixed;
   left: 0;
   width: 100%;
-  max-width: 280px;
+  max-width: $sidebar-width;
   height: calc(100vh - 62px);
   display: block;
 }
@@ -73,3 +81,4 @@ a {
   text-decoration: none;
   list-style: none !important;
 }
+

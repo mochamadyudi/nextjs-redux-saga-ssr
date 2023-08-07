@@ -1,0 +1,78 @@
+$max-width: 320px;
+@mixin new-drawer{
+  // border:1px solid red;
+}
+
+@mixin drawer-content{
+  background:white;
+  //border-radius:10px;
+}
+
+
+@mixin single-menu{
+  border-radius:10px;
+  padding:10px;
+  transition:.2s;
+  // position:relative;
+  &:hover{
+    transition:.2s;
+    background:#fff000;
+  }
+}
+.menu{
+  max-width: $max-width;
+  position:relative;
+  transition:.2s;
+  height:100%;
+  @include drawer-content;
+
+  &-layout{
+    overflow: hidden;
+    height: 100%;
+    border:1px solid red;
+    width:100%;
+    max-width: 320px;
+  }
+
+  &-sub{
+
+    &--item{
+      @include single-menu;
+    }
+    &--drawer{
+      min-height: 320px;
+    }
+  }
+  &-content {
+    position: relative;
+    max-width: $max-width;
+
+    &--header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding:10px;
+      border-bottom: 2px solid rgba(0,0,0,.05);
+    }
+
+    &--title{
+
+    }
+    &--drawer{
+      //box-shadow: 0 0 20px rgba(82.4, 82.4, 82.4,.05);
+      min-width:$max-width;
+      // opacity: 0;
+      position: absolute;
+      top:0 !important;
+      right:-100%;
+
+      @include drawer-content;
+    }
+
+  }
+
+  &-item{
+    @include single-menu;
+
+  }
+}

@@ -35,13 +35,11 @@ export default class AppProvider extends Component<AppProviderProps> {
 
   render() {
     return (
-      <ThemeProvider>
-        <AppSplitting {...this.props}>
-          <main className={'yid-main'}>
-            {this.props.children}
-          </main>
-        </AppSplitting>
-      </ThemeProvider>
+      <AppSplitting {...this.props}>
+        <main className={'yid-main'}>
+          {this.props.children}
+        </main>
+      </AppSplitting>
     )
   }
 }

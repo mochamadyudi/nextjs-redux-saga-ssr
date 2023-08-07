@@ -8,7 +8,7 @@ export default class _Document extends Document {
 
     render() {
         return (
-            <Html lang="en">
+            <Html lang="en" className={'light'}>
                 <Head/>
                 <body>
                 <Main/>
